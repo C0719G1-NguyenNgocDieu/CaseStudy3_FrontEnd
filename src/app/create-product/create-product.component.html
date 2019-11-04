@@ -1,0 +1,42 @@
+<h1>Create product</h1>
+<p *ngIf="messenge" class="message">{{messenge}}</p>
+<form [formGroup]="fg" (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+      Name:
+      <input type="text" formControlName="name">
+    </label>
+  </div>
+  <div *ngIf="fg.get('name').invalid && fg.get('name').touched" style="color: red">
+    Title is required and min length is 5
+  </div>
+
+  <div>
+    <label>
+      Price:
+      <input type="text" formControlName="price">
+    </label>
+  </div>
+  <div *ngIf="fg.get('price').invalid && fg.get('price').touched" style="color: red">
+    Title is required
+  </div>
+
+  <div>
+    <label>
+      Description:
+      <input type="text" formControlName="description">
+    </label>
+  </div>
+  <div *ngIf="fg.get('description').invalid && fg.get('description').touched" style="color: red">
+    Title is required and min length is 5
+  </div>
+  <div>
+    <label>
+      Image:
+      <input type="text" formControlName="image">
+    </label>
+  </div>
+
+
+  <button type="submit">Submit</button>
+</form>

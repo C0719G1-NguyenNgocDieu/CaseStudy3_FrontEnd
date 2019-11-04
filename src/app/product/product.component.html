@@ -1,0 +1,55 @@
+<div><button [routerLink]="['/add']">Add new product</button></div>
+
+<!--<div *ngFor="let item of output; index as i" class="card" style="width: 18rem;">-->
+<!--  <img src="{{item.image}}" class="card-img-top" alt="..." [routerLink]="['/home',item.id]">-->
+<!--  <div class="card-body">-->
+<!--    <h5 class="card-title" [routerLink]="['/home',item.id]">{{item.name}}</h5>-->
+<!--    <p class="card-price">{{item.price}}</p>-->
+<!--    <p class="card-text">{{item.description}}</p>-->
+<!--&lt;!&ndash;    <a href="#" class="btn btn-primary">Go somewhere</a>&ndash;&gt;-->
+<!--&lt;!&ndash;    <button [routerLink]="['/home',item.id]">view</button>&ndash;&gt;-->
+<!--    <button [routerLink]="['/home/edit',item.id]">edit</button>-->
+<!--    <button [routerLink]="['/home/delete',item.id]">delete</button>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+  <div class = "col-sm-4 poly-prod" *ngFor="let item of output; index as i">
+    <div class = "panel panel-default">
+      <div class = "panel-heading">
+        <h4 class = "panel-title">
+          {{item.name}}
+        </h4>
+      </div>
+      <div class = "panel-body">
+        <img src="{{item.image}}" height="228" width="292" [routerLink]="['/home',item.id]"></div>
+      <div class = "panel-footer">
+        <p><em>${{item.price}}</em></p>
+        <p>{{item.description}}</p>
+        <button [routerLink]="['/home/edit',item.id]">edit</button>
+        <button [routerLink]="['/home/delete',item.id]">delete</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+<!--<table>-->
+<!--  <tr>-->
+<!--    <td>Name</td>-->
+<!--    <td>Price</td>-->
+<!--    <td>Description</td>-->
+<!--    <td colspan="2"><button [routerLink]="['/add']">Add new product</button></td>-->
+<!--  </tr>-->
+<!--  <tr *ngFor="let item of output; index as i">-->
+<!--    <td>{{item.name}}</td>-->
+<!--    <td>{{item.price}}</td>-->
+<!--    <td>{{item.description}}</td>-->
+<!--    <button [routerLink]="['/home',item.id]">view</button>-->
+<!--    <button [routerLink]="['/home/edit',item.id]">edit</button>-->
+<!--    <button [routerLink]="['/home/delete',item.id]">delete</button>-->
+<!--  </tr>-->
+<!--</table>-->
